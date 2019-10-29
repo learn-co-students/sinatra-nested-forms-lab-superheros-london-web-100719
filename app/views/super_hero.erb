@@ -1,1 +1,15 @@
+<h1>Create a Team and Heroes!<h1>
+<form method="post" action="/teams">
+    <h3>Team Name: <input type="text" name="team[name]"><h2>
+    <h3>Team Motto: <input type="text" name="team[motto]"><h2>
 
+    <% 3.times do |i| %>
+        <h3>Hero <%= i+1 %>:</h3>
+        <p>Name: <input id="member<%=i+1%>_name" type="text" name="team[members][][name]"></p>
+        <p>Power: <input id="member<%=i+1%>_power" type="text" name="team[members][][power]"></p>
+        <p>Biography: <input id="member<%=i+1%>_bio" type="text" name="team[members][][bio]"></p>
+    <% end %>
+
+    <input type="submit" value="submit">
+
+</form>
